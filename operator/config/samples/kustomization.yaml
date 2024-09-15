@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- kube-stats_v1alpha1_stats.yaml
+# +kubebuilder:scaffold:manifestskustomizesamples

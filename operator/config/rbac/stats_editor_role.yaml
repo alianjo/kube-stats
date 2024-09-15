@@ -1,0 +1,27 @@
+# permissions for end users to edit stats.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator
+    app.kubernetes.io/managed-by: kustomize
+  name: stats-editor-role
+rules:
+- apiGroups:
+  - kube-stats.intodevops.com
+  resources:
+  - stats
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - kube-stats.intodevops.com
+  resources:
+  - stats/status
+  verbs:
+  - get

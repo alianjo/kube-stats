@@ -1,0 +1,23 @@
+# permissions for end users to view stats.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator
+    app.kubernetes.io/managed-by: kustomize
+  name: stats-viewer-role
+rules:
+- apiGroups:
+  - kube-stats.intodevops.com
+  resources:
+  - stats
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - kube-stats.intodevops.com
+  resources:
+  - stats/status
+  verbs:
+  - get

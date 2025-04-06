@@ -28,4 +28,5 @@ WORKDIR /
 COPY --from=builder /workspace/exporter .
 USER 65532:65532
 
+# This is the ENTRYPOINT
 ENTRYPOINT ["/exporter"]
